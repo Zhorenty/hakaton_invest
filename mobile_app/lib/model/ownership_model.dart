@@ -9,6 +9,7 @@ class Ownership with _$Ownership {
   factory Ownership({
     required int id,
     required String name,
+    List<String>? photo,
     required double price,
     required String location,
   }) = _Ownership;

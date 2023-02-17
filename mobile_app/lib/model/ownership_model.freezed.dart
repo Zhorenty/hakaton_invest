@@ -22,6 +22,7 @@ Ownership _$OwnershipFromJson(Map<String, dynamic> json) {
 mixin _$Ownership {
   int get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
+  List<String>? get photo => throw _privateConstructorUsedError;
   double get price => throw _privateConstructorUsedError;
   String get location => throw _privateConstructorUsedError;
 
@@ -36,7 +37,12 @@ abstract class $OwnershipCopyWith<$Res> {
   factory $OwnershipCopyWith(Ownership value, $Res Function(Ownership) then) =
       _$OwnershipCopyWithImpl<$Res, Ownership>;
   @useResult
-  $Res call({int id, String name, double price, String location});
+  $Res call(
+      {int id,
+      String name,
+      List<String>? photo,
+      double price,
+      String location});
 }
 
 /// @nodoc
@@ -54,6 +60,7 @@ class _$OwnershipCopyWithImpl<$Res, $Val extends Ownership>
   $Res call({
     Object? id = null,
     Object? name = null,
+    Object? photo = freezed,
     Object? price = null,
     Object? location = null,
   }) {
@@ -66,6 +73,10 @@ class _$OwnershipCopyWithImpl<$Res, $Val extends Ownership>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
+      photo: freezed == photo
+          ? _value.photo
+          : photo // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       price: null == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
@@ -85,7 +96,12 @@ abstract class _$$_OwnershipCopyWith<$Res> implements $OwnershipCopyWith<$Res> {
       __$$_OwnershipCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int id, String name, double price, String location});
+  $Res call(
+      {int id,
+      String name,
+      List<String>? photo,
+      double price,
+      String location});
 }
 
 /// @nodoc
@@ -101,6 +117,7 @@ class __$$_OwnershipCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? name = null,
+    Object? photo = freezed,
     Object? price = null,
     Object? location = null,
   }) {
@@ -113,6 +130,10 @@ class __$$_OwnershipCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
+      photo: freezed == photo
+          ? _value._photo
+          : photo // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       price: null == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
@@ -131,8 +152,10 @@ class _$_Ownership implements _Ownership {
   _$_Ownership(
       {required this.id,
       required this.name,
+      final List<String>? photo,
       required this.price,
-      required this.location});
+      required this.location})
+      : _photo = photo;
 
   factory _$_Ownership.fromJson(Map<String, dynamic> json) =>
       _$$_OwnershipFromJson(json);
@@ -141,6 +164,16 @@ class _$_Ownership implements _Ownership {
   final int id;
   @override
   final String name;
+  final List<String>? _photo;
+  @override
+  List<String>? get photo {
+    final value = _photo;
+    if (value == null) return null;
+    if (_photo is EqualUnmodifiableListView) return _photo;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   final double price;
   @override
@@ -148,7 +181,7 @@ class _$_Ownership implements _Ownership {
 
   @override
   String toString() {
-    return 'Ownership(id: $id, name: $name, price: $price, location: $location)';
+    return 'Ownership(id: $id, name: $name, photo: $photo, price: $price, location: $location)';
   }
 
   @override
@@ -158,6 +191,7 @@ class _$_Ownership implements _Ownership {
             other is _$_Ownership &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
+            const DeepCollectionEquality().equals(other._photo, _photo) &&
             (identical(other.price, price) || other.price == price) &&
             (identical(other.location, location) ||
                 other.location == location));
@@ -165,7 +199,8 @@ class _$_Ownership implements _Ownership {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, price, location);
+  int get hashCode => Object.hash(runtimeType, id, name,
+      const DeepCollectionEquality().hash(_photo), price, location);
 
   @JsonKey(ignore: true)
   @override
@@ -185,6 +220,7 @@ abstract class _Ownership implements Ownership {
   factory _Ownership(
       {required final int id,
       required final String name,
+      final List<String>? photo,
       required final double price,
       required final String location}) = _$_Ownership;
 
@@ -195,6 +231,8 @@ abstract class _Ownership implements Ownership {
   int get id;
   @override
   String get name;
+  @override
+  List<String>? get photo;
   @override
   double get price;
   @override

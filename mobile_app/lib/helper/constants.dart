@@ -1,1 +1,1 @@
-const APP_TITLE = '';
+const APP_TITLE = 'BrickFunds';

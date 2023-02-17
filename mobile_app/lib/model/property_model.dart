@@ -8,6 +8,7 @@ class Properties with _$Properties {
   factory Properties({
     required int id,
     required String name,
+    List<String>? photos,
     required String description,
     required double price,
     required String location,
