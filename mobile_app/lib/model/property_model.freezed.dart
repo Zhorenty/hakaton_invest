@@ -14,44 +14,43 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-Properties _$PropertiesFromJson(Map<String, dynamic> json) {
-  return _Properties.fromJson(json);
+Property _$PropertyFromJson(Map<String, dynamic> json) {
+  return _Property.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Properties {
+mixin _$Property {
   int get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  List<String>? get photos => throw _privateConstructorUsedError;
+  List<String>? get imageUrls => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   double get price => throw _privateConstructorUsedError;
   String get location => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $PropertiesCopyWith<Properties> get copyWith =>
+  $PropertyCopyWith<Property> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $PropertiesCopyWith<$Res> {
-  factory $PropertiesCopyWith(
-          Properties value, $Res Function(Properties) then) =
-      _$PropertiesCopyWithImpl<$Res, Properties>;
+abstract class $PropertyCopyWith<$Res> {
+  factory $PropertyCopyWith(Property value, $Res Function(Property) then) =
+      _$PropertyCopyWithImpl<$Res, Property>;
   @useResult
   $Res call(
       {int id,
       String name,
-      List<String>? photos,
+      List<String>? imageUrls,
       String description,
       double price,
       String location});
 }
 
 /// @nodoc
-class _$PropertiesCopyWithImpl<$Res, $Val extends Properties>
-    implements $PropertiesCopyWith<$Res> {
-  _$PropertiesCopyWithImpl(this._value, this._then);
+class _$PropertyCopyWithImpl<$Res, $Val extends Property>
+    implements $PropertyCopyWith<$Res> {
+  _$PropertyCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -63,7 +62,7 @@ class _$PropertiesCopyWithImpl<$Res, $Val extends Properties>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? photos = freezed,
+    Object? imageUrls = freezed,
     Object? description = null,
     Object? price = null,
     Object? location = null,
@@ -77,9 +76,9 @@ class _$PropertiesCopyWithImpl<$Res, $Val extends Properties>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      photos: freezed == photos
-          ? _value.photos
-          : photos // ignore: cast_nullable_to_non_nullable
+      imageUrls: freezed == imageUrls
+          ? _value.imageUrls
+          : imageUrls // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       description: null == description
           ? _value.description
@@ -98,28 +97,27 @@ class _$PropertiesCopyWithImpl<$Res, $Val extends Properties>
 }
 
 /// @nodoc
-abstract class _$$_PropertiesCopyWith<$Res>
-    implements $PropertiesCopyWith<$Res> {
-  factory _$$_PropertiesCopyWith(
-          _$_Properties value, $Res Function(_$_Properties) then) =
-      __$$_PropertiesCopyWithImpl<$Res>;
+abstract class _$$_PropertyCopyWith<$Res> implements $PropertyCopyWith<$Res> {
+  factory _$$_PropertyCopyWith(
+          _$_Property value, $Res Function(_$_Property) then) =
+      __$$_PropertyCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
       {int id,
       String name,
-      List<String>? photos,
+      List<String>? imageUrls,
       String description,
       double price,
       String location});
 }
 
 /// @nodoc
-class __$$_PropertiesCopyWithImpl<$Res>
-    extends _$PropertiesCopyWithImpl<$Res, _$_Properties>
-    implements _$$_PropertiesCopyWith<$Res> {
-  __$$_PropertiesCopyWithImpl(
-      _$_Properties _value, $Res Function(_$_Properties) _then)
+class __$$_PropertyCopyWithImpl<$Res>
+    extends _$PropertyCopyWithImpl<$Res, _$_Property>
+    implements _$$_PropertyCopyWith<$Res> {
+  __$$_PropertyCopyWithImpl(
+      _$_Property _value, $Res Function(_$_Property) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -127,12 +125,12 @@ class __$$_PropertiesCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? photos = freezed,
+    Object? imageUrls = freezed,
     Object? description = null,
     Object? price = null,
     Object? location = null,
   }) {
-    return _then(_$_Properties(
+    return _then(_$_Property(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -141,9 +139,9 @@ class __$$_PropertiesCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      photos: freezed == photos
-          ? _value._photos
-          : photos // ignore: cast_nullable_to_non_nullable
+      imageUrls: freezed == imageUrls
+          ? _value._imageUrls
+          : imageUrls // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       description: null == description
           ? _value.description
@@ -163,29 +161,29 @@ class __$$_PropertiesCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Properties implements _Properties {
-  _$_Properties(
+class _$_Property implements _Property {
+  _$_Property(
       {required this.id,
       required this.name,
-      final List<String>? photos,
+      final List<String>? imageUrls,
       required this.description,
       required this.price,
       required this.location})
-      : _photos = photos;
+      : _imageUrls = imageUrls;
 
-  factory _$_Properties.fromJson(Map<String, dynamic> json) =>
-      _$$_PropertiesFromJson(json);
+  factory _$_Property.fromJson(Map<String, dynamic> json) =>
+      _$$_PropertyFromJson(json);
 
   @override
   final int id;
   @override
   final String name;
-  final List<String>? _photos;
+  final List<String>? _imageUrls;
   @override
-  List<String>? get photos {
-    final value = _photos;
+  List<String>? get imageUrls {
+    final value = _imageUrls;
     if (value == null) return null;
-    if (_photos is EqualUnmodifiableListView) return _photos;
+    if (_imageUrls is EqualUnmodifiableListView) return _imageUrls;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -199,17 +197,18 @@ class _$_Properties implements _Properties {
 
   @override
   String toString() {
-    return 'Properties(id: $id, name: $name, photos: $photos, description: $description, price: $price, location: $location)';
+    return 'Property(id: $id, name: $name, imageUrls: $imageUrls, description: $description, price: $price, location: $location)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Properties &&
+            other is _$_Property &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            const DeepCollectionEquality().equals(other._photos, _photos) &&
+            const DeepCollectionEquality()
+                .equals(other._imageUrls, _imageUrls) &&
             (identical(other.description, description) ||
                 other.description == description) &&
             (identical(other.price, price) || other.price == price) &&
@@ -223,7 +222,7 @@ class _$_Properties implements _Properties {
       runtimeType,
       id,
       name,
-      const DeepCollectionEquality().hash(_photos),
+      const DeepCollectionEquality().hash(_imageUrls),
       description,
       price,
       location);
@@ -231,35 +230,34 @@ class _$_Properties implements _Properties {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PropertiesCopyWith<_$_Properties> get copyWith =>
-      __$$_PropertiesCopyWithImpl<_$_Properties>(this, _$identity);
+  _$$_PropertyCopyWith<_$_Property> get copyWith =>
+      __$$_PropertyCopyWithImpl<_$_Property>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PropertiesToJson(
+    return _$$_PropertyToJson(
       this,
     );
   }
 }
 
-abstract class _Properties implements Properties {
-  factory _Properties(
+abstract class _Property implements Property {
+  factory _Property(
       {required final int id,
       required final String name,
-      final List<String>? photos,
+      final List<String>? imageUrls,
       required final String description,
       required final double price,
-      required final String location}) = _$_Properties;
+      required final String location}) = _$_Property;
 
-  factory _Properties.fromJson(Map<String, dynamic> json) =
-      _$_Properties.fromJson;
+  factory _Property.fromJson(Map<String, dynamic> json) = _$_Property.fromJson;
 
   @override
   int get id;
   @override
   String get name;
   @override
-  List<String>? get photos;
+  List<String>? get imageUrls;
   @override
   String get description;
   @override
@@ -268,6 +266,6 @@ abstract class _Properties implements Properties {
   String get location;
   @override
   @JsonKey(ignore: true)
-  _$$_PropertiesCopyWith<_$_Properties> get copyWith =>
+  _$$_PropertyCopyWith<_$_Property> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -6,22 +6,22 @@ part of 'property_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Properties _$$_PropertiesFromJson(Map<String, dynamic> json) =>
-    _$_Properties(
+_$_Property _$$_PropertyFromJson(Map<String, dynamic> json) => _$_Property(
       id: json['id'] as int,
       name: json['name'] as String,
-      photos:
-          (json['photos'] as List<dynamic>?)?.map((e) => e as String).toList(),
+      imageUrls: (json['imageUrls'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       description: json['description'] as String,
       price: (json['price'] as num).toDouble(),
       location: json['location'] as String,
     );
 
-Map<String, dynamic> _$$_PropertiesToJson(_$_Properties instance) =>
+Map<String, dynamic> _$$_PropertyToJson(_$_Property instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'photos': instance.photos,
+      'imageUrls': instance.imageUrls,
       'description': instance.description,
       'price': instance.price,
       'location': instance.location,

@@ -4,16 +4,16 @@ part 'property_model.freezed.dart';
 part 'property_model.g.dart';
 
 @freezed
-class Properties with _$Properties {
-  factory Properties({
+class Property with _$Property {
+  factory Property({
     required int id,
     required String name,
-    List<String>? photos,
+    List<String>? imageUrls,
     required String description,
     required double price,
     required String location,
-  }) = _Properties;
+  }) = _Property;
 
-  factory Properties.fromJson(Map<String, dynamic> json) =>
-      _$PropertiesFromJson(json);
+  factory Property.fromJson(Map<String, dynamic> json) =>
+      _$PropertyFromJson(json);
 }
