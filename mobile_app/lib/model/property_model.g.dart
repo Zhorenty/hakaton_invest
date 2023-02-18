@@ -8,21 +8,24 @@ part of 'property_model.dart';
 
 _$_Property _$$_PropertyFromJson(Map<String, dynamic> json) => _$_Property(
       id: json['id'] as int,
-      name: json['name'] as String,
-      imageUrls: (json['imageUrls'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
+      location: json['location'] as String,
+      imageUrl: json['imageUrl'] as String?,
       description: json['description'] as String,
       price: (json['price'] as num).toDouble(),
-      location: json['location'] as String,
+      potentialPercentProfitPerYear:
+          json['potentialPercentProfitPerYear'] as int,
+      isCommercial: json['isCommercial'] as bool? ?? false,
+      isRisked: json['isRisked'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$$_PropertyToJson(_$_Property instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'name': instance.name,
-      'imageUrls': instance.imageUrls,
+      'location': instance.location,
+      'imageUrl': instance.imageUrl,
       'description': instance.description,
       'price': instance.price,
-      'location': instance.location,
+      'potentialPercentProfitPerYear': instance.potentialPercentProfitPerYear,
+      'isCommercial': instance.isCommercial,
+      'isRisked': instance.isRisked,
     };

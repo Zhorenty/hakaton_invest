@@ -21,11 +21,13 @@ Property _$PropertyFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Property {
   int get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  List<String>? get imageUrls => throw _privateConstructorUsedError;
+  String get location => throw _privateConstructorUsedError;
+  String? get imageUrl => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   double get price => throw _privateConstructorUsedError;
-  String get location => throw _privateConstructorUsedError;
+  int get potentialPercentProfitPerYear => throw _privateConstructorUsedError;
+  bool? get isCommercial => throw _privateConstructorUsedError;
+  bool? get isRisked => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -40,11 +42,13 @@ abstract class $PropertyCopyWith<$Res> {
   @useResult
   $Res call(
       {int id,
-      String name,
-      List<String>? imageUrls,
+      String location,
+      String? imageUrl,
       String description,
       double price,
-      String location});
+      int potentialPercentProfitPerYear,
+      bool? isCommercial,
+      bool? isRisked});
 }
 
 /// @nodoc
@@ -61,25 +65,27 @@ class _$PropertyCopyWithImpl<$Res, $Val extends Property>
   @override
   $Res call({
     Object? id = null,
-    Object? name = null,
-    Object? imageUrls = freezed,
+    Object? location = null,
+    Object? imageUrl = freezed,
     Object? description = null,
     Object? price = null,
-    Object? location = null,
+    Object? potentialPercentProfitPerYear = null,
+    Object? isCommercial = freezed,
+    Object? isRisked = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+      location: null == location
+          ? _value.location
+          : location // ignore: cast_nullable_to_non_nullable
               as String,
-      imageUrls: freezed == imageUrls
-          ? _value.imageUrls
-          : imageUrls // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+      imageUrl: freezed == imageUrl
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
       description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -88,10 +94,18 @@ class _$PropertyCopyWithImpl<$Res, $Val extends Property>
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as double,
-      location: null == location
-          ? _value.location
-          : location // ignore: cast_nullable_to_non_nullable
-              as String,
+      potentialPercentProfitPerYear: null == potentialPercentProfitPerYear
+          ? _value.potentialPercentProfitPerYear
+          : potentialPercentProfitPerYear // ignore: cast_nullable_to_non_nullable
+              as int,
+      isCommercial: freezed == isCommercial
+          ? _value.isCommercial
+          : isCommercial // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isRisked: freezed == isRisked
+          ? _value.isRisked
+          : isRisked // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ) as $Val);
   }
 }
@@ -105,11 +119,13 @@ abstract class _$$_PropertyCopyWith<$Res> implements $PropertyCopyWith<$Res> {
   @useResult
   $Res call(
       {int id,
-      String name,
-      List<String>? imageUrls,
+      String location,
+      String? imageUrl,
       String description,
       double price,
-      String location});
+      int potentialPercentProfitPerYear,
+      bool? isCommercial,
+      bool? isRisked});
 }
 
 /// @nodoc
@@ -124,25 +140,27 @@ class __$$_PropertyCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? name = null,
-    Object? imageUrls = freezed,
+    Object? location = null,
+    Object? imageUrl = freezed,
     Object? description = null,
     Object? price = null,
-    Object? location = null,
+    Object? potentialPercentProfitPerYear = null,
+    Object? isCommercial = freezed,
+    Object? isRisked = freezed,
   }) {
     return _then(_$_Property(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+      location: null == location
+          ? _value.location
+          : location // ignore: cast_nullable_to_non_nullable
               as String,
-      imageUrls: freezed == imageUrls
-          ? _value._imageUrls
-          : imageUrls // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+      imageUrl: freezed == imageUrl
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
       description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -151,10 +169,18 @@ class __$$_PropertyCopyWithImpl<$Res>
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as double,
-      location: null == location
-          ? _value.location
-          : location // ignore: cast_nullable_to_non_nullable
-              as String,
+      potentialPercentProfitPerYear: null == potentialPercentProfitPerYear
+          ? _value.potentialPercentProfitPerYear
+          : potentialPercentProfitPerYear // ignore: cast_nullable_to_non_nullable
+              as int,
+      isCommercial: freezed == isCommercial
+          ? _value.isCommercial
+          : isCommercial // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isRisked: freezed == isRisked
+          ? _value.isRisked
+          : isRisked // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -164,12 +190,13 @@ class __$$_PropertyCopyWithImpl<$Res>
 class _$_Property implements _Property {
   _$_Property(
       {required this.id,
-      required this.name,
-      final List<String>? imageUrls,
+      required this.location,
+      this.imageUrl,
       required this.description,
       required this.price,
-      required this.location})
-      : _imageUrls = imageUrls;
+      required this.potentialPercentProfitPerYear,
+      this.isCommercial = false,
+      this.isRisked = false});
 
   factory _$_Property.fromJson(Map<String, dynamic> json) =>
       _$$_PropertyFromJson(json);
@@ -177,27 +204,25 @@ class _$_Property implements _Property {
   @override
   final int id;
   @override
-  final String name;
-  final List<String>? _imageUrls;
+  final String location;
   @override
-  List<String>? get imageUrls {
-    final value = _imageUrls;
-    if (value == null) return null;
-    if (_imageUrls is EqualUnmodifiableListView) return _imageUrls;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
+  final String? imageUrl;
   @override
   final String description;
   @override
   final double price;
   @override
-  final String location;
+  final int potentialPercentProfitPerYear;
+  @override
+  @JsonKey()
+  final bool? isCommercial;
+  @override
+  @JsonKey()
+  final bool? isRisked;
 
   @override
   String toString() {
-    return 'Property(id: $id, name: $name, imageUrls: $imageUrls, description: $description, price: $price, location: $location)';
+    return 'Property(id: $id, location: $location, imageUrl: $imageUrl, description: $description, price: $price, potentialPercentProfitPerYear: $potentialPercentProfitPerYear, isCommercial: $isCommercial, isRisked: $isRisked)';
   }
 
   @override
@@ -206,14 +231,21 @@ class _$_Property implements _Property {
         (other.runtimeType == runtimeType &&
             other is _$_Property &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
-            const DeepCollectionEquality()
-                .equals(other._imageUrls, _imageUrls) &&
+            (identical(other.location, location) ||
+                other.location == location) &&
+            (identical(other.imageUrl, imageUrl) ||
+                other.imageUrl == imageUrl) &&
             (identical(other.description, description) ||
                 other.description == description) &&
             (identical(other.price, price) || other.price == price) &&
-            (identical(other.location, location) ||
-                other.location == location));
+            (identical(other.potentialPercentProfitPerYear,
+                    potentialPercentProfitPerYear) ||
+                other.potentialPercentProfitPerYear ==
+                    potentialPercentProfitPerYear) &&
+            (identical(other.isCommercial, isCommercial) ||
+                other.isCommercial == isCommercial) &&
+            (identical(other.isRisked, isRisked) ||
+                other.isRisked == isRisked));
   }
 
   @JsonKey(ignore: true)
@@ -221,11 +253,13 @@ class _$_Property implements _Property {
   int get hashCode => Object.hash(
       runtimeType,
       id,
-      name,
-      const DeepCollectionEquality().hash(_imageUrls),
+      location,
+      imageUrl,
       description,
       price,
-      location);
+      potentialPercentProfitPerYear,
+      isCommercial,
+      isRisked);
 
   @JsonKey(ignore: true)
   @override
@@ -244,26 +278,32 @@ class _$_Property implements _Property {
 abstract class _Property implements Property {
   factory _Property(
       {required final int id,
-      required final String name,
-      final List<String>? imageUrls,
+      required final String location,
+      final String? imageUrl,
       required final String description,
       required final double price,
-      required final String location}) = _$_Property;
+      required final int potentialPercentProfitPerYear,
+      final bool? isCommercial,
+      final bool? isRisked}) = _$_Property;
 
   factory _Property.fromJson(Map<String, dynamic> json) = _$_Property.fromJson;
 
   @override
   int get id;
   @override
-  String get name;
+  String get location;
   @override
-  List<String>? get imageUrls;
+  String? get imageUrl;
   @override
   String get description;
   @override
   double get price;
   @override
-  String get location;
+  int get potentialPercentProfitPerYear;
+  @override
+  bool? get isCommercial;
+  @override
+  bool? get isRisked;
   @override
   @JsonKey(ignore: true)
   _$$_PropertyCopyWith<_$_Property> get copyWith =>
