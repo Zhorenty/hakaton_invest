@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block title %}
+    Home page
+{% endblock %}
+{% block content %}
+    <form action="{% url 'ownership_create_url' %}" method="post" id="ownership_form" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="hidden" name="images_count" id="images_count">
+        <div id="address_div" class="form-group">
+            <label class="form-label mt-4">Адрес
+            <input name="address" id="address_div" class="form-control" id="address_div" aria-describedby="emailHelp">
+            </label>
+        </div>
+         <div id="images" class="form-group">
+            Ссылки на изображения
+        </div>
+        <button type="button" id="add">Добавить изображение</button>
+        <div id="com_org" class="form-check">
+            <label for="com_org" class="form-label mt-4">Коммерческая организцаия?
+            <input name="com_org" class="form-check-input" type="checkbox" value="1" id="com_org" checked="">
+            </label>
+        </div>
+
+        <div id="description_div">
+            Описание
+            <input name="description">
+        </div>
+        <div id="price_div">
+            Цена
+            <input name="price">
+        </div>
+
+
+        <button type="submit">Создать объявление</button>
+
+    </form>
+    {% for row in rows %}
+        {{ row.address }}
+        {{ row.price }}
+        {{ row.description }}
+        {% if row.commercial_organization %}
+            <p>Коммерческая организация</p>
+        {% endif %}
+        {% for key, value in row.images.items %}
+
+            <p>
+                {{ value }}
+            </p>
+        {% endfor %}
+        <a href="{% url 'ownership_delete_url' %}?id={{ row.id }}">
+            <button type="submit">Удалить</button>
+        </a>
+    {% endfor %}
+
+    {% block script %}
+        <script>
+            var add = document.getElementById('add');
+            var form = document.getElementById('ownership_form');
+            let image_id = 0;
+            add.addEventListener('click', function () {
+                var div = document.createElement('div');
+                div.id = 'images-' + image_id;
+                div.innerHTML = '<input name="image[' + image_id + ']">'
+                form.insertBefore(div, add);
+                image_id++;
+                document.getElementById('images_count').value = image_id;
+            });
+        </script>
+    {% endblock %}
+
+{% endblock %}
