@@ -23,6 +23,10 @@ type PredictionReq struct {
 	Longitude  float32 `json:"longitude"`
 }
 
+type PredictionRes struct {
+	Prediction float32 `json:"prediction"`
+}
+
 func Ping(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
 		"message": "pong",
@@ -122,29 +126,33 @@ func GetPrediction(db *database.UsersDB) gin.HandlerFunc {
 			return
 		}
 
-		req, err := http.NewRequest("POST", "http://localhost:8000/predict", bytes.NewBuffer(data))
+		req, err := http.NewRequest("GET", "http://pyserver:8000/predict-price", bytes.NewBuffer(data))
+		req.Header.Set("Content-Type", "application/json; charset=UTF-8")
 		if err != nil {
 			c.JSON(http.StatusInternalServerError, gin.H{"error_message": "Failed to create request to python server"})
 			return
 		}
 
-		res, err := http.DefaultClient.Do(req)
+		client := &http.Client{}
+		res, err := client.Do(req)
 		if err != nil {
 			c.JSON(http.StatusInternalServerError, gin.H{
-				"error_message": "Failed to do HTTP request",
+				"error_message": err.Error(),
 			})
 		}
 		defer res.Body.Close()
 
-		body, err := ioutil.ReadAll(res.Body)
-		if err != nil {
+		body, _ := ioutil.ReadAll(res.Body)
+
+		var nnRespose PredictionRes
+		if err := json.Unmarshal(body, &nnRespose); err != nil {
 			c.JSON(http.StatusInternalServerError, gin.H{
-				"error_message": "Failed to read HTTP response",
+				"error_message": err.Error(),
 			})
 		}
 
-		c.JSON(res.StatusCode, gin.H{
-			"response": string(body),
+		c.JSON(res.StatusCode, gin.H {
+			"is_risk": nnRespose.Prediction < 0.5,
 		})
 	}
 }

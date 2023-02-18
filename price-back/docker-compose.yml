@@ -6,6 +6,7 @@ services:
     ports:
       - "8080:8080"
   python:
+    hostname: pyserver
     container_name: python-nn
     build: ./docker/python
     ports:
