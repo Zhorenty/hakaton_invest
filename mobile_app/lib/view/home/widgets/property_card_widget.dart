@@ -2,8 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_app/model/property_model.dart';
 
-import '../../helper/constants.dart';
-
 class PropertyCard extends StatelessWidget {
   const PropertyCard({
     Key? key,

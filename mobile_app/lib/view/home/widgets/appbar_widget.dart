@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:mobile_app/helper/color_constants.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key});
@@ -9,17 +8,15 @@ class CustomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: const [
-        SizedBox(height: 55),
         Center(
-          // width: double.infinity,
-          // height: 80,
           child: Text(
             'Brick Funds',
             style: TextStyle(
-                fontSize: 36,
-                fontFamily: 'Outfit',
-                fontWeight: FontWeight.bold,
-                color: Color(0xff1B1AFF)),
+              fontSize: 36,
+              fontFamily: 'Outfit',
+              fontWeight: FontWeight.bold,
+              color: ColorConstants.primary,
+            ),
           ),
         ),
         SizedBox(height: 20),

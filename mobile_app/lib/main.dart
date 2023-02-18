@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'package:mobile_app/view/screens/search_screen.dart';
+import 'package:mobile_app/helper/navigator_key.dart';
+import 'package:mobile_app/view/auth/auth_screen.dart';
 
 void main() {
   runApp(const BrickFundsApp());
@@ -11,10 +11,9 @@ class BrickFundsApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: SearchScreen(),
-      ),
+    return MaterialApp(
+      navigatorKey: NavigatorKey.navigatorKey,
+      home: const AuthScreen(),
     );
   }
 }
