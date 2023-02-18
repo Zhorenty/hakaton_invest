@@ -22,7 +22,7 @@ func main() {
 		protect := v1.Group("/protect")
 		protect.Use(middleware.AuthMiddleware(db))
 		protect.GET("/prediction", routes.GetPrediction(db))
-		protect.GET("/check", func(ctx *gin.Context) {
+		v1.GET("/check", func(ctx *gin.Context) {
 			ctx.JSON(http.StatusOK, gin.H{
 				"message": "auth OK",
 			})
