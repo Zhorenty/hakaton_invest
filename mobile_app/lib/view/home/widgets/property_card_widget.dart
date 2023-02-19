@@ -20,9 +20,8 @@ class PropertyCard extends StatelessWidget {
       description: '',
       location: 'Дальняя улица, 8к1, Краснодар, \nКраснодарский край',
       imageUrl:
-          // 'https://mykaleidoscope.ru/uploads/posts/2022-08/1660216443_22-mykaleidoscope-ru-p-krasivie-chastnii-dom-dizain-krasivo-foto-22.jpg',
           'https://cdn-p.cian.site/images/06/446/341/kottedzh-sochi-voroshilovgradskaya-ulica-1436446026-1.jpg',
-      price: 14000000,
+      price: '14 000 000',
       potentialPercentProfitPerYear: 7,
       isRisked: false,
       isCommercial: false,
@@ -30,10 +29,10 @@ class PropertyCard extends StatelessWidget {
     Property home2 = Property(
       id: 1,
       description: '',
-      location: 'Краснодарский край, Сочи, р-н Адлерский',
+      location: 'Краснодарский край, Сочи,\n р-н Адлерский',
       imageUrl:
           'https://mykaleidoscope.ru/uploads/posts/2022-08/1660216443_22-mykaleidoscope-ru-p-krasivie-chastnii-dom-dizain-krasivo-foto-22.jpg',
-      price: 12750000,
+      price: '12 750 000',
       potentialPercentProfitPerYear: 5,
       isRisked: true,
       isCommercial: false,
@@ -72,7 +71,9 @@ class PropertyCard extends StatelessWidget {
                               label: Align(
                                 alignment: Alignment.topCenter,
                                 child: Text(
-                                  examples[index].isRisked.toString(),
+                                  examples[index].isRisked.toString() == false
+                                      ? 'Риск'
+                                      : 'Риск',
                                   style: const TextStyle(color: Colors.white),
                                 ),
                               ),
@@ -92,7 +93,10 @@ class PropertyCard extends StatelessWidget {
                               label: Align(
                                 alignment: Alignment.topCenter,
                                 child: Text(
-                                  examples[index].isCommercial.toString(),
+                                  examples[index].isCommercial.toString() ==
+                                          false
+                                      ? 'Жилое'
+                                      : 'Жилое',
                                   style: const TextStyle(color: Colors.white),
                                 ),
                               ),
@@ -117,14 +121,14 @@ class PropertyCard extends StatelessWidget {
                       children: [
                         examples[index].potentialPercentProfitPerYear.isNegative
                             ? const Icon(
-                                Icons.arrow_upward,
-                                size: 25,
-                                color: Color.fromARGB(255, 42, 209, 89),
-                              )
-                            : const Icon(
                                 Icons.arrow_downward,
                                 size: 25,
                                 color: Color.fromARGB(255, 209, 42, 42),
+                              )
+                            : const Icon(
+                                Icons.arrow_upward,
+                                size: 25,
+                                color: Color.fromARGB(255, 42, 209, 89),
                               ),
                         // SizedBox(
                         //   width: 11,
@@ -137,28 +141,26 @@ class PropertyCard extends StatelessWidget {
 
                         const SizedBox(width: 6),
                         Text(
-                          examples[index]
-                              .potentialPercentProfitPerYear
-                              .toString(),
+                          '${examples[index].potentialPercentProfitPerYear}% в год',
                           style: TextStyle(
                               color: examples[index]
                                       .potentialPercentProfitPerYear
                                       .isNegative
                                   ? Colors.red
                                   : Colors.green,
-                              fontWeight: FontWeight.bold),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18),
                         ),
                       ],
                     ),
                     const SizedBox(height: 5),
                     Text(
-                      '${examples[index].price.toInt()} ₽',
+                      '${examples[index].price} ₽',
                       // '12 750 000 ₽',
                       style: const TextStyle(
-                        // fontWeight: FontWeight.bold,
-                        fontFamily: 'Outfit',
-                        fontSize: 25,
-                      ),
+                          fontFamily: 'Outfit',
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold),
                     ),
                     //ЗАМУТИ ПЕРЕНОС СТРОКИ ЭРИК
                     Text(
