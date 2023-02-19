@@ -1,10 +1,27 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_app/helper/color_constants.dart';
+import 'package:mobile_app/model/property_model.dart';
 
-class BriefcaseScreen extends StatelessWidget {
+class BriefcaseScreen extends StatefulWidget {
   const BriefcaseScreen({super.key});
 
+  @override
+  State<BriefcaseScreen> createState() => _BriefcaseScreenState();
+}
+
+class _BriefcaseScreenState extends State<BriefcaseScreen> {
+  Property home1 = Property(
+    id: 0,
+    description: '',
+    location: 'Дальняя улица, 8к1, Краснодар, \nКраснодарский край',
+    imageUrl:
+        'https://cdn-p.cian.site/images/06/446/341/kottedzh-sochi-voroshilovgradskaya-ulica-1436446026-1.jpg',
+    price: '14 000 000',
+    potentialPercentProfitPerYear: 7,
+    isRisked: false,
+    isCommercial: false,
+  );
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +49,6 @@ class BriefcaseScreen extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              // alignment: Alignment.center,
               decoration: BoxDecoration(
                 color: Colors.black12,
                 borderRadius: BorderRadius.circular(20),
@@ -49,16 +65,57 @@ class BriefcaseScreen extends StatelessWidget {
                 ],
               ),
             ),
+            SizedBox(height: 20),
             GridView.builder(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
               ),
-              itemCount: 2,
+              itemCount: 1,
               itemBuilder: (context, index) {
-                Container(
-                  child: Column(
-                    children: [Image.network('')],
-                  ),
+                return Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Image.network(
+                        'https://32.img.avito.st/image/1/1.ySCOPba6Zcm4lKfMkC6dXUOeY8M6Hm0LP55nzy6YZw.NbaqP-Q5ppwSq3IFJ_5Ug83lr9W4403X23v8XPDn30E',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        const Icon(
+                          Icons.arrow_upward,
+                          size: 25,
+                          color: Color.fromARGB(255, 42, 209, 89),
+                        ),
+                        // SizedBox(
+                        //   width: 11,
+                        //   child: Icon(
+                        //     CupertinoIcons.arrow_up,
+                        //     size: 22,
+                        //     color: Color.fromARGB(255, 42, 209, 89),
+                        //   ),
+                        // ),
+
+                        const SizedBox(width: 6),
+                        Text(
+                          '15% в год',
+                          style: TextStyle(
+                            color: Colors.green,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Text(
+                      'Москва ситиб',
+                      textAlign: TextAlign.left,
+                    ),
+                  ],
                 );
               },
             ),
