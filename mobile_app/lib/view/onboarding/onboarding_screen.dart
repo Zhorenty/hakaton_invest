@@ -4,6 +4,7 @@ import 'package:mobile_app/helper/navigator_key.dart';
 import 'package:mobile_app/model/classification_part_model.dart';
 import 'package:mobile_app/view/home/screens/home_screen.dart';
 import 'package:mobile_app/view/onboarding/widgets/classification_part_widget.dart';
+import 'package:mobile_app/view/root/root_screen.dart';
 import 'package:onboarding/onboarding.dart';
 
 final List<ClassificationPartModel> classificationPartModels = [
@@ -64,7 +65,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           } else {
             NavigatorKey.navigatorKey.currentState!.push(
               MaterialPageRoute(
-                builder: (context) => const HomeScreen(),
+                builder: (context) => const RootScreen(),
               ),
             );
           }

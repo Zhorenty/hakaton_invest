@@ -230,6 +230,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "8.1.2"
+  flutter_bounce_widget:
+    dependency: "direct main"
+    description:
+      name: flutter_bounce_widget
+      sha256: fafb9cfcf31f805cf9a06af774a06cb17200fb88ebd09e943a7b735f9c3a4013
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.0"
   flutter_lints:
     dependency: "direct dev"
     description:
