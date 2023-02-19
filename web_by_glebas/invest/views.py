@@ -2,6 +2,13 @@ from django.shortcuts import render, redirect
 from django.views import View
 from .forms import OwnershipCreateForm
 from .models import Ownership
+from django.http import JsonResponse
+import requests
+
+
+def jsonmodels(request):
+    data = list(Ownership.objects.values())
+    return JsonResponse(data, safe=False)
 
 
 def ownership_list(request):
@@ -26,11 +33,14 @@ class OwnershipCreateView(View):
         for i in range(int(request.POST.get('images_count'))):
             dictionary[f'image[{i}]'] = request.POST.get(f'image[{i}]')
 
+
         model = Ownership.objects.create(address=address,
                                          price=price,
                                          description=description,
                                          images=dictionary,
-                                         commercial_organization=com_org)
+                                         commercial_organization=com_org,
+                                         is_risked=False,
+                                         potential_percent_profit_per_year=7)
         model.save()
         return redirect('ownerships_list_url')
 
