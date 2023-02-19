@@ -11,7 +11,7 @@ _$_Property _$$_PropertyFromJson(Map<String, dynamic> json) => _$_Property(
       location: json['location'] as String,
       imageUrl: json['imageUrl'] as String?,
       description: json['description'] as String,
-      price: (json['price'] as num).toDouble(),
+      price: json['price'] as String,
       potentialPercentProfitPerYear:
           json['potentialPercentProfitPerYear'] as int,
       isCommercial: json['isCommercial'] as bool? ?? false,

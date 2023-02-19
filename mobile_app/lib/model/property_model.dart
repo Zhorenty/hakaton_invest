@@ -10,7 +10,7 @@ class Property with _$Property {
     required String location,
     String? imageUrl,
     required String description,
-    required double price,
+    required String price,
     required int potentialPercentProfitPerYear,
     @Default(false) bool? isCommercial,
     @Default(false) bool? isRisked,

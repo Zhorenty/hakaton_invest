@@ -24,7 +24,7 @@ mixin _$Property {
   String get location => throw _privateConstructorUsedError;
   String? get imageUrl => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
-  double get price => throw _privateConstructorUsedError;
+  String get price => throw _privateConstructorUsedError;
   int get potentialPercentProfitPerYear => throw _privateConstructorUsedError;
   bool? get isCommercial => throw _privateConstructorUsedError;
   bool? get isRisked => throw _privateConstructorUsedError;
@@ -45,7 +45,7 @@ abstract class $PropertyCopyWith<$Res> {
       String location,
       String? imageUrl,
       String description,
-      double price,
+      String price,
       int potentialPercentProfitPerYear,
       bool? isCommercial,
       bool? isRisked});
@@ -93,7 +93,7 @@ class _$PropertyCopyWithImpl<$Res, $Val extends Property>
       price: null == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
-              as double,
+              as String,
       potentialPercentProfitPerYear: null == potentialPercentProfitPerYear
           ? _value.potentialPercentProfitPerYear
           : potentialPercentProfitPerYear // ignore: cast_nullable_to_non_nullable
@@ -122,7 +122,7 @@ abstract class _$$_PropertyCopyWith<$Res> implements $PropertyCopyWith<$Res> {
       String location,
       String? imageUrl,
       String description,
-      double price,
+      String price,
       int potentialPercentProfitPerYear,
       bool? isCommercial,
       bool? isRisked});
@@ -168,7 +168,7 @@ class __$$_PropertyCopyWithImpl<$Res>
       price: null == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
-              as double,
+              as String,
       potentialPercentProfitPerYear: null == potentialPercentProfitPerYear
           ? _value.potentialPercentProfitPerYear
           : potentialPercentProfitPerYear // ignore: cast_nullable_to_non_nullable
@@ -210,7 +210,7 @@ class _$_Property implements _Property {
   @override
   final String description;
   @override
-  final double price;
+  final String price;
   @override
   final int potentialPercentProfitPerYear;
   @override
@@ -281,7 +281,7 @@ abstract class _Property implements Property {
       required final String location,
       final String? imageUrl,
       required final String description,
-      required final double price,
+      required final String price,
       required final int potentialPercentProfitPerYear,
       final bool? isCommercial,
       final bool? isRisked}) = _$_Property;
@@ -297,7 +297,7 @@ abstract class _Property implements Property {
   @override
   String get description;
   @override
-  double get price;
+  String get price;
   @override
   int get potentialPercentProfitPerYear;
   @override
